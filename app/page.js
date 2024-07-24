@@ -1,9 +1,11 @@
 "use client"
 import React, { useState } from 'react'
+import { render } from 'react-dom'
 
 const page = () => {
   const [title, settitle] = useState("")
   const [desc, setdesc] = useState("")
+  const [mainTask, setmainTask] = useState([])
 
   const submitHandler=(e)=>{
     e.preventDefault()
@@ -13,6 +15,7 @@ const page = () => {
     setdesc("")
     
   }
+  let renderTask = <h2>No Task Available</h2>
   return (
     <>
     <h1 className='bg-black text-white p-5 text-xl font-bold text-center'>Dev's TodoList</h1>
@@ -36,6 +39,14 @@ const page = () => {
 
     <button className='bg-black text-white px-4 py-3 text-2xl font-bold rounded m-5 '>Add Task</button>
     </form>
+    <hr></hr>
+    <div className='p-8 bg-slate-100'>
+      <ul>
+        {renderTask}
+      </ul>
+    </div>
+
+
     </>
   )
 }
