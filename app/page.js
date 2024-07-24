@@ -18,15 +18,16 @@ const page = () => {
   let renderTask = <h2>No Task Available</h2>
   if(mainTask.length>0){
   renderTask = mainTask.map((t,i)=>{
-    return <li>
-      <div className='flex justify-between mb-5'>
+    return <li className='flex items-center justify-between'>
+      <div className='flex justify-between mb-5 w-2/3'>
       <h4 className='text-2xl font-semibold'>{t.title}</h4>
       <h5 className='text-xl font-semibold'>{t.desc}</h5>
     </div>
+    <button>DELETE</button>
     </li>
   })}
 
-  
+
   return (
     <>
     <h1 className='bg-black text-white p-5 text-xl font-bold text-center'>Dev's TodoList</h1>
